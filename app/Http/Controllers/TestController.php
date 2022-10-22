@@ -18,4 +18,9 @@ class TestController extends Controller
         ]);
     }
 
+    public function test2()
+    {
+        return view('create');
+    }
+
 }

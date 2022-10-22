@@ -20,34 +20,27 @@
         </div>
       </nav>
     <div class="container">
-        <div class="text-center">
-            <a href="/create" class="mt-4 btn btn-success">Create Post</a>
-        </div>
-        <table class="table mt-4">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Posted By</th>
-                <th scope="col">Created At</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                    <a href="#" class="btn btn-info">View</a>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Title</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
 
-            </tbody>
-          </table>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Description</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Post Creator</label>
+                <select class="form-control">
+                    <option>Ahmed</option>
+                </select>
+              </div>
+         
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+   
 
     </div>
 

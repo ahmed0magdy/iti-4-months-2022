@@ -30,3 +30,4 @@ Route::get('/', function () {
 // });
 
 Route::get('new-route', [TestController::class, 'test']);
+Route::get('create',[TestController::class, 'test2']);
