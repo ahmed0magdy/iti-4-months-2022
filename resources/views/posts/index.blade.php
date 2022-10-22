@@ -21,7 +21,7 @@
       </nav>
     <div class="container">
         <div class="text-center">
-            <a href="/create" class="mt-4 btn btn-success">Create Post</a>
+            <a href="/posts/create" class="mt-4 btn btn-success">Create Post</a>
         </div>
         <table class="table mt-4">
             <thead>

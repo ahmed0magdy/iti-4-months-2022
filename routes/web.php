@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +29,5 @@ Route::get('/', function () {
 //     ]);
 // });
 
-Route::get('new-route', [TestController::class, 'test']);
-Route::get('create',[TestController::class, 'test2']);
+Route::get('posts', [PostController::class, 'index']);
+Route::get('posts/create',[PostController::class, 'create']);
