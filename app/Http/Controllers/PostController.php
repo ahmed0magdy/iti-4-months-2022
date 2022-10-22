@@ -23,4 +23,13 @@ class PostController extends Controller
         return view('posts.create');
     }
 
+    public function show($postId)
+    {
+        $arr = [
+            ['id' => 1 , 'category' => 'test']
+        ];
+        // dd($arr);
+
+        return 'we are in show now';
+    }
 }
