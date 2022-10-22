@@ -15,12 +15,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="#">All Posts</a>
+            <a class="nav-link active" href="{{route('posts.index')}}">All Posts</a>
           </div>
         </div>
       </nav>
     <div class="container">
-        <form method="POST" action="/posts">
+        <form method="POST" action="{{route('posts.store')}}">
           @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Title</label>
