@@ -32,4 +32,9 @@ class PostController extends Controller
 
         return 'we are in show now';
     }
+
+    public function store()
+    {
+        dd('we are storing the data');
+    }
 }
