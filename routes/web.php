@@ -18,5 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    $testName = 'ahmedasdasdasdd';
+    $books = ['first book', 'second book'];
+
+    return view('test', [
+        'name' => $testName,
+         'age' => 23,
+         'books' => $books,
+    ]);
 });
