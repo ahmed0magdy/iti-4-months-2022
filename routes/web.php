@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    $testName = 'ahmedasdasdasdd';
-    $books = ['first book', 'second book'];
+// Route::get('/test', function () {
+//     $testName = 'ahmedasdasdasdd';
+//     $books = ['first book', 'second book'];
 
-    return view('test', [
-        'name' => $testName,
-         'age' => 23,
-         'books' => $books,
-    ]);
-});
+//     return view('test', [
+//         'name' => $testName,
+//          'age' => 23,
+//          'books' => $books,
+//     ]);
+// });
+
+Route::get('new-route', [TestController::class, 'test']);
