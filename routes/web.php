@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,9 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 // foreach($test as $item){ //thorws exception
 
 // }
+
+Route::get('test',function(){
+    $user = User::find(1);
+
+    dd($user->posts);
+});
