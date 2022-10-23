@@ -35,6 +35,15 @@ class PostController extends Controller
 
     public function store()
     {
+        //here we will put the logic to store in db
+
+        //- create the db
+        //- create the needed tables
+        //- make connection to the db
+        //- write query to store the data in db
+        //- modify input names in the create.blade.php
+        //- close the connection of db
+        //- redirection to the index page
         dd('we are storing the data');
     }
 }
