@@ -19,9 +19,15 @@
     @foreach ($posts as $post)
       <tr>
         <td>{{$post['id']}}</th>
-        <td>{{$post['title']}}</td>
-        <td>{{$post['posted_by']}}</td>
-        <td>{{$post['creation_date']}}</td>
+        <td>{{$post->title}}</td>
+        @if($post->user)
+          <td>{{$post->user->name}}</td>
+        @else
+          <td>Not Defined</td>
+        @endif
+        {{-- <td>{{$post->user ? $post->user->name : 'Not Defined'}}</td>
+        <td>{{$post->user?->name}}</td> --}}
+        <td>{{$post->created_at}}</td>
         <td>
             <a href="{{route('posts.show', $post['id'])}}" class="btn btn-info">View</a>
             {{-- <a href="{{route('posts.show', ['post' =>$post['id']])}}" class="btn btn-info">View</a> --}}
