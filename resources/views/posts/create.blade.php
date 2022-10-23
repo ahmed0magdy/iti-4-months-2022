@@ -18,7 +18,7 @@
                 <label for="exampleInputEmail1" class="form-label">Post Creator</label>
                 <select name="post_creator" class="form-control">
                   @foreach ($allUsers as $user)
-                    <option>{{ $user->name }}</option>
+                    <option value="{{$user->id}}">{{ $user->name }}</option>
                   @endforeach
                 </select>
               </div>

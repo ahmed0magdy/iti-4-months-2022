@@ -73,6 +73,7 @@ class PostController extends Controller
         Post::create([
             'title' => request()->title,
             'description' => $data['description'],
+            'user_id' => $data['post_creator'],
         ]); //insert into posts ('ahmed','asdasd')
 
         return to_route('posts.index');
