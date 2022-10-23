@@ -34,6 +34,13 @@ class PostController extends Controller
             ['id' => 1 , 'category' => 'test']
         ];
         // dd($arr);
+        //select * from posts where id  = $postId
+        $post = Post::find($postId);
+        // $post = Post::where('id', $postId)->first();
+
+        //select * from posts where title = 'laravel' limit 1;
+        //Post::where('title', 'Laravel For Beginners')->first()
+        // $posts = Post::where('title', 'Laravel For Beginners')->get();
 
         return 'we are in show now';
     }
