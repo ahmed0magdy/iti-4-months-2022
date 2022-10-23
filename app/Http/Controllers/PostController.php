@@ -11,7 +11,8 @@ class PostController extends Controller
     public function index()
     {
         //write query to get the data from posts table
-        
+        //one user has many posts
+        //one post belongs to user
         $allPosts = Post::all();//SELECT * from posts
         // dd($allPosts); //collection object that contains small objects of Post model class
         // $allPosts = [
