@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $allPosts = [
-            ['id' => 1 , 'title' => 'laravel is cool', 'posted_by' => 'Ahmed', 'creation_date' => '2022-10-22'],
-            ['id' => 2 , 'title' => 'PHP deep dive', 'posted_by' => 'Mohamed', 'creation_date' => '2022-10-15'],
-        ];
+        //write query to get the data from posts table
+        
+        $allPosts = Post::all();//SELECT * from posts
+        // dd($allPosts); //collection object that contains small objects of Post model class
+        // $allPosts = [
+        //     ['id' => 1 , 'title' => 'laravel is cool', 'posted_by' => 'Ahmed', 'creation_date' => '2022-10-22'],
+        //     ['id' => 2 , 'title' => 'PHP deep dive', 'posted_by' => 'Mohamed', 'creation_date' => '2022-10-15'],
+        // ];
 
         return view('posts.index', [
           'posts' => $allPosts
@@ -37,8 +42,8 @@ class PostController extends Controller
     {
         //here we will put the logic to store in db
 
-        //- create the db
-        //- create the needed tables
+        //- create the db (Done)
+        //- create the needed tables (Done)
         //- make connection to the db
         //- write query to store the data in db
         //- modify input names in the create.blade.php
