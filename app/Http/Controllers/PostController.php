@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -25,7 +26,11 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $allUsers = User::all();
+
+        return view('posts.create',[
+            'allUsers' => $allUsers
+        ]);
     }
 
     public function show($postId)
@@ -51,11 +56,25 @@ class PostController extends Controller
 
         //- create the db (Done)
         //- create the needed tables (Done)
-        //- make connection to the db
-        //- write query to store the data in db
+        //- make connection to the db (Done)
+        //- write query to store the data in db (Done)
         //- modify input names in the create.blade.php
-        //- close the connection of db
+        //- close the connection of db (Done)
         //- redirection to the index page
-        dd('we are storing the data');
+
+        // $data = $_POST;
+        $data = request()->all();
+
+        // request()->title
+        // request()->description
+        // request()->post_creator
+        // dd($data, request()->title, request()->post_creator);
+
+        Post::create([
+            'title' => request()->title,
+            'description' => $data['description'],
+        ]); //insert into posts ('ahmed','asdasd')
+
+        return to_route('posts.index');
     }
 }
