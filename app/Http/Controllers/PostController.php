@@ -73,7 +73,7 @@ class PostController extends Controller
         //- redirection to the index page
 
         // $data = $_POST;
-        $data = request()->all();
+        $data = $request->all();
 
         // request()->title
         // request()->description
