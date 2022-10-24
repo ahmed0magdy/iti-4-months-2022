@@ -53,6 +53,11 @@ class PostController extends Controller
 
     public function store()
     {
+        request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:5'],
+        ]);
+
         //here we will put the logic to store in db
 
         //- create the db (Done)
