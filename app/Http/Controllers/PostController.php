@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -51,8 +52,16 @@ class PostController extends Controller
         return 'we are in show now';
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
+        // request()->validate([
+        //     'title' => ['required', 'min:3'],
+        //     'description' => ['required', 'min:5'],
+        // ],[
+        //     'title.required' => 'my custom validation error message',
+        //     'title.min' => 'we have made override for min'
+        // ]);
+
         //here we will put the logic to store in db
 
         //- create the db (Done)
@@ -64,7 +73,7 @@ class PostController extends Controller
         //- redirection to the index page
 
         // $data = $_POST;
-        $data = request()->all();
+        $data = $request->all();
 
         // request()->title
         // request()->description
