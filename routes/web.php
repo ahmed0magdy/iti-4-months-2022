@@ -59,3 +59,7 @@ Route::get('test',function(){
 
     dd($user->posts);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
