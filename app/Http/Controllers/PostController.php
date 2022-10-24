@@ -56,6 +56,9 @@ class PostController extends Controller
         request()->validate([
             'title' => ['required', 'min:3'],
             'description' => ['required', 'min:5'],
+        ],[
+            'title.required' => 'my custom validation error message',
+            'title.min' => 'we have made override for min'
         ]);
 
         //here we will put the logic to store in db
