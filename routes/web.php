@@ -78,14 +78,25 @@ Route::get('/auth/redirect', function () {
 Route::get('/auth/callback', function () {
     $githubUser = Socialite::driver('github')->user();
 
-    $user = User::updateOrCreate([
-        'email' => $githubUser->email,
-    ], [
-        'name' => $githubUser->name,
-        'email' => $githubUser->email,
-        'github_token' => $githubUser->token,
-        'github_refresh_token' => $githubUser->refreshToken,
-    ]);
+    $user = User::where('email', $githubUser->email)->first();
+    if($user) {
+        $user->update([
+            'name' => $githubUser->name,
+        ]);
+    } else {
+        $user = User::create([
+            'email' => $githubUser->email,
+            'name' => $githubUser->name,
+        ]);
+    }
+    // $user = User::updateOrCreate([
+    //     'email' => $githubUser->email,
+    // ], [
+    //     'name' => $githubUser->name,
+    //     'email' => $githubUser->email,
+    //     'github_token' => $githubUser->token,
+    //     'github_refresh_token' => $githubUser->refreshToken,
+    // ]);
  
     Auth::login($user);
  
